@@ -20,7 +20,7 @@ class Excel(abc.ABC):
 
 class ProdExcel(Excel):
 
-    def extract(self):
+    def extract(self) -> pd.DataFrame:
         return pd.read_excel(self.path_to_file, usecols='A:J', header=2)
 
     def transform(self) -> List[list]:
